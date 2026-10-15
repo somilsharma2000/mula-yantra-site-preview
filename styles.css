@@ -23,7 +23,7 @@ a{color:inherit}
 .hd{position:sticky;top:0;z-index:40;background:rgba(10,10,14,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .hd .wrap{display:flex;align-items:center;gap:28px;height:72px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
-.brand svg{width:32px;height:auto;filter:drop-shadow(0 2px 10px rgba(155,217,255,.25))}
+.brand svg{width:38px;height:auto;filter:drop-shadow(0 2px 10px rgba(155,217,255,.25))}
 .brand b{font-family:var(--font-d);font-weight:600;font-size:13px;letter-spacing:.22em}
 .nav{display:flex;gap:26px;margin-left:auto}
 .nav a{text-decoration:none;color:var(--ink-2);font-size:14px;letter-spacing:.04em;padding:6px 2px;border-bottom:2px solid transparent;transition:color var(--dur) var(--ease),border-color var(--dur) var(--ease)}
@@ -49,8 +49,8 @@ a{color:inherit}
 .hero{position:relative;background:radial-gradient(1000px 640px at 50% -12%,#181C26 0%,var(--obsidian) 60%) var(--obsidian);color:var(--ink);overflow:hidden}
 .hero::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(155,217,255,0) 0%,rgba(155,217,255,.22) 30%,rgba(155,217,255,.05) 68%,rgba(155,217,255,0) 100%);pointer-events:none}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;justify-items:center;padding-top:44px;padding-bottom:64px;gap:6px}
-.hero .emblem{position:relative;width:100%;max-width:460px;margin:0 auto;animation:emblem-in .95s cubic-bezier(.16,.8,.24,1) both,float 9.5s ease-in-out 1.4s infinite}
-.hero .emblem::before{content:'';position:absolute;left:50%;top:38%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(155,217,255,.14) 0%,rgba(155,217,255,0) 62%);pointer-events:none}
+.hero .emblem{position:relative;width:100%;max-width:480px;margin:0 auto;animation:emblem-in .95s cubic-bezier(.16,.8,.24,1) both,float 9.5s ease-in-out 1.4s infinite}
+.hero .emblem::before{content:'';position:absolute;left:50%;top:53%;width:520px;height:520px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(155,217,255,.14) 0%,rgba(155,217,255,0) 62%);pointer-events:none}
 .hero .emblem img{width:100%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 28px 70px rgba(0,0,0,.6))}
 .hero .emblem img{animation:emblem-glow .95s cubic-bezier(.16,.8,.24,1) both}
 .hero .sheen{position:absolute;inset:0;pointer-events:none;opacity:0;
