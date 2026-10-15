@@ -49,12 +49,30 @@ a{color:inherit}
 /* ---------- hero ---------- */
 .hero{background:radial-gradient(1000px 640px at 50% -12%,#181C26 0%,var(--obsidian) 60%) var(--obsidian);color:var(--ink);overflow:hidden}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;justify-items:center;padding-top:44px;padding-bottom:64px;gap:6px}
-.hero .emblem{position:relative;width:100%;max-width:500px;margin:0 auto}
+.hero .emblem{position:relative;width:100%;max-width:500px;margin:0 auto;animation:emblem-in 1.15s cubic-bezier(.16,.8,.24,1) both,float 9.5s ease-in-out 1.6s infinite}
 .hero .emblem::before{content:'';position:absolute;left:50%;top:38%;width:560px;height:560px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(155,217,255,.14) 0%,rgba(155,217,255,0) 62%);pointer-events:none}
 .hero .emblem img{width:100%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 28px 70px rgba(0,0,0,.6))}
-.hero .emblem::after{content:'';position:absolute;left:50%;top:38%;width:5px;height:5px;border-radius:50%;background:var(--gold-hi);box-shadow:0 0 16px 4px rgba(242,211,153,.85);animation:origin 2.6s var(--ease) forwards;pointer-events:none}
+.hero .emblem img{animation:emblem-glow 1.15s cubic-bezier(.16,.8,.24,1) both}
+.hero .sheen{position:absolute;inset:0;pointer-events:none;opacity:0;
+ -webkit-mask:url('hero-emblem.png') center/100% 100% no-repeat;
+ mask:url('hero-emblem.png') center/100% 100% no-repeat;
+ background:linear-gradient(112deg,transparent 30%,rgba(238,244,255,0) 40%,rgba(238,244,255,.30) 48%,rgba(155,217,255,.20) 53%,rgba(238,244,255,0) 62%,transparent 72%);
+ transform:translateX(-130%);animation:sheen 7.5s ease-in-out 2.2s infinite}
+.hero .origin{position:absolute;left:50.1%;top:47.9%;width:96px;height:96px;transform:translate(-50%,-50%);
+ background:radial-gradient(circle,rgba(255,248,225,.85) 0%,rgba(242,211,153,.45) 22%,rgba(212,175,127,.18) 45%,transparent 68%);
+ border-radius:50%;mix-blend-mode:screen;pointer-events:none;animation:origin-breathe 4.6s ease-in-out 1.2s infinite}
+@keyframes emblem-in{0%{opacity:0;transform:translateY(10px) scale(.94)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes emblem-glow{0%{filter:drop-shadow(0 28px 70px rgba(0,0,0,.6)) brightness(.72)}55%{filter:drop-shadow(0 28px 70px rgba(0,0,0,.6)) brightness(1.06)}100%{filter:drop-shadow(0 28px 70px rgba(0,0,0,.6)) brightness(1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes sheen{0%{opacity:0;transform:translateX(-130%)}8%{opacity:1}45%{transform:translateX(130%);opacity:1}53%{opacity:0;transform:translateX(130%)}100%{opacity:0;transform:translateX(130%)}}
+@keyframes origin-breathe{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}}
 @keyframes origin{0%{opacity:0;transform:scale(.2)}18%{opacity:1;transform:scale(1)}70%{opacity:.9}100%{opacity:0;transform:scale(.5) translateY(-10px)}}
 .reveal{transition-delay:0s}
+.hero .kicker.reveal{transition-delay:.5s}
+.hero h1.reveal{transition-delay:.65s}
+.hero .tagline.reveal{transition-delay:.8s}
+.hero .lede.reveal{transition-delay:.95s}
+.hero .acts.reveal{transition-delay:1.1s}
 .hero h1{font-family:var(--font-d);font-weight:600;font-size:clamp(28px,6vw,68px);line-height:1.04;letter-spacing:.045em;margin:22px 0 8px}
 .hero .tagline{font-size:13px;letter-spacing:.34em;color:var(--silver);margin:0 0 20px;text-transform:uppercase}
 .hero .lede{color:var(--ink-2);font-size:18px;max-width:56ch;margin:0 0 30px}
@@ -143,4 +161,6 @@ section.tight{padding:56px 0}
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}
+.hero .emblem,.hero .emblem img{animation:none;opacity:1;transform:none;filter:drop-shadow(0 28px 70px rgba(0,0,0,.6))}
+.hero .sheen,.hero .origin{display:none}}
