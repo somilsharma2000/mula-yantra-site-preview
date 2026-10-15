@@ -2,7 +2,8 @@
 (function(){
 'use strict';
 var burger=document.querySelector('.burger'),nav=document.querySelector('.nav');
-if(burger&&nav){burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});}
+if(burger&&nav){burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus();}});}
 var els=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){e.target.style.transitionDelay=Math.min(i*70,280)+'ms';e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e);});}
 else{els.forEach(function(e){e.classList.add('in');});}
