@@ -76,6 +76,7 @@ a{color:inherit}
 .hero .acts{display:flex;gap:14px;flex-wrap:wrap}
 .hero .kicker{margin:0}
 @media(max-width:900px){.hero .emblem{max-width:300px}.hero .lede{margin-left:auto;margin-right:auto}.hero .acts{justify-content:center}}
+@media(max-width:380px){.hero .wrap{padding-top:28px;padding-bottom:40px}.hero .emblem{max-width:240px}.hero h1{margin:12px 0 8px}.hero .tagline{margin-bottom:14px}.hero .lede{margin-bottom:20px;font-size:16px}}
 /* ---------- sections ---------- */
 .kicker{font-family:var(--font-d);font-size:12px;letter-spacing:.32em;color:#7FC4E8;text-transform:uppercase;font-weight:500;margin:0 0 12px}
 .kicker.ice{color:var(--ice)}
